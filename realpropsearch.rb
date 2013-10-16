@@ -37,8 +37,7 @@ File.open('./Inrem47.csv').each_line do |line|
  street=vars[1]
  details=get_details number,street
  owner=get_owner details
- puts number+" "+street
- puts owner
+ puts number+" "+street+":"+owner.to_s
  sleep 0.5
 end 
 
