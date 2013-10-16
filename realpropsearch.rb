@@ -30,7 +30,15 @@ def get_owner details
     }
 end
 
-details=get_details '27','eighteenth'
 
-owner=get_owner details
-puts owner
+File.open('./Inrem47.csv').each_line do |line|
+ vars=line.split ','
+ number=vars[0]
+ street=vars[1]
+ details=get_details number,street
+ owner=get_owner details
+ puts number+" "+street
+ puts owner
+ sleep 0.5
+end 
+
