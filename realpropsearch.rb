@@ -18,12 +18,12 @@ def get_owner details
   noko=Nokogiri::HTML(details)
   table=noko.xpath "/html/body/div[@id='container']/div[@id='center_column_wide']/table[@id='generic_site_table']"
 
-  city = table.xpath('./tr[1]/td[2]').text
+  ownername= table.xpath('./tr[2]/td[2]').text
   street = table.xpath('./tr[6]/td[2]').text
   citystate = table.xpath('./tr[7]/td[2]').text
   zip = table.xpath('./tr[8]/td[2]').text
 
-  info={'city' => city,
+  info={'ownername' => ownername,
     'street' => street,
     'city/state' => citystate,
     'zip' => zip,
