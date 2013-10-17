@@ -3,6 +3,11 @@ citydata
 
 buffalo city data
 
+My code looks like shit
+My code runs like shit
+Have a problem?
+Make a commit
+
 realpropsearch.rb
 
     Takes a csv file that has a street number and name on each line
@@ -12,3 +17,10 @@ realpropsearch.rb
     usage: ruby realpropsearch.rb Inrem47.csv
 
     has a default rate limit of 2 requests per second
+
+allrealprop.rb
+    Takes a file that lists street names
+    goes through erie county web form and gets every house on the street
+    the file 'streets' has a listing of every street in Buffalo
+
+    usage: ruby allrealprop.rb streets
