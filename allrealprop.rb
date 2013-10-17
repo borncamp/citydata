@@ -70,7 +70,6 @@ def get_houses_on_street street
     prior_group.links_with(:text=>'Details').each do |link|
       owner=get_owner link.click.content
       owners.push owner
-      puts owner
     end
     prior_group=next_group
     next_group=result.link_with(:href=>'property_info_results_next.asp').click
@@ -78,16 +77,15 @@ def get_houses_on_street street
   next_group.links_with(:text=>'Details').each do |link|
     owner=get_owner link.click.content
     owners.push owner
-    puts owner
   end
   
   return owners
 end
 
+listings=[]
 File.open(ARGV[0]).each_line do |line|
- street=line.split[0]
- puts "working street "+street
- get_houses_on_street street  
- sleep 0.3
+  street=line.split[0]
+  listings+= get_houses_on_street street  
+  sleep 0.3
 end 
 
