@@ -25,3 +25,9 @@ allrealprop.rb
     the file 'streets' has a listing of every street in Buffalo
 
     usage: ruby allrealprop.rb streets
+
+realproperty.json.zip - A zipped copy of the real property db scraped using allrealprop.rb in JSON format
+
+realproperty.csv - A copy of the real property db scraped using allrealprop.rb in csv format
+
+realproperty.csv - A zipped copy of the real property db scraped using allrealprop.rb in csv format

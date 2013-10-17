@@ -1,5 +1,10 @@
 require 'rubygems'
 require 'mechanize'
+require 'mongo'
+include Mongo
+
+db=MongoClient.new('localhost').db('citydata')
+@coll=db['realproperty']
 
 agent=Mechanize.new
 page=agent.get "https://paytax.erie.gov/webprop/index.asp"
@@ -84,8 +89,13 @@ end
 
 listings=[]
 File.open(ARGV[0]).each_line do |line|
+  puts 'working on street '+line
   street=line.split[0]
-  listings+= get_houses_on_street street  
+  listings=get_houses_on_street street
+  listings.each do |listing|
+    @coll.insert listing
+  end
+
   sleep 0.3
 end 
 
