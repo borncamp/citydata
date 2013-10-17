@@ -30,4 +30,4 @@ realproperty.json.zip - A zipped copy of the real property db scraped using allr
 
 realproperty.csv - A copy of the real property db scraped using allrealprop.rb in csv format
 
-realproperty.csv - A zipped copy of the real property db scraped using allrealprop.rb in csv format
+realproperty.csv.zip - A zipped copy of the real property db scraped using allrealprop.rb in csv format
