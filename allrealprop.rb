@@ -57,14 +57,10 @@ def get_houses_on_street street
   
 end
 
-get_houses_on_street 'normal'
-#File.open(ARGV[0]).each_line do |line|
-# vars=line.split ','
-# number=vars[0]
-# street=vars[1]
-# details=get_details number,street
-# owner=get_owner details
-# puts number+" "+street+":"+owner.to_s
-# sleep 0.01
-#end 
+File.open(ARGV[0]).each_line do |line|
+ street=line.split[0]
+ puts "working street "+street
+ get_houses_on_street street  
+ sleep 0.3
+end 
 
