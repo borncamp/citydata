@@ -26,6 +26,13 @@ allrealprop.rb
 
     usage: ruby allrealprop.rb streets
 
+countysalerecords.rb
+    
+    Parses a mongodb for sbl number, then uses those numbers to
+    lookup sale records for a given property on the counties website
+    only ran on data for city of buffalo.  Ran on the realproperty.json
+    dataset.
+
 realproperty.json.zip - A zipped copy of the real property db scraped using allrealprop.rb in JSON format
 
 realproperty.csv - A copy of the real property db scraped using allrealprop.rb in csv format
