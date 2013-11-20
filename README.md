@@ -52,3 +52,8 @@ citysales.csv - A copy of citysales.json in csv format
 citysalesshort.csv - A copy of citysales.csv with fields for sbl,location,saletype,saledate,saleprice
 
 
+
+
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/borncamp/citydata/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
