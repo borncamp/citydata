@@ -34,6 +34,7 @@ countysalerecords.rb
     dataset.
 
 citysalerecords.rb
+
     Goes through mongodb collection and uses addresses to find sale
     records on the city of buffalo's property information dataset.
     Ran on the realproperty.json dataset.
