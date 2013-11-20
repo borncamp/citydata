@@ -33,8 +33,21 @@ countysalerecords.rb
     only ran on data for city of buffalo.  Ran on the realproperty.json
     dataset.
 
+citysalerecords.rb
+    Goes through mongodb collection and uses addresses to find sale
+    records on the city of buffalo's property information dataset.
+    Ran on the realproperty.json dataset.
+
 realproperty.json.zip - A zipped copy of the real property db scraped using allrealprop.rb in JSON format
 
 realproperty.csv - A copy of the real property db scraped using allrealprop.rb in csv format
 
 realproperty.csv.zip - A zipped copy of the real property db scraped using allrealprop.rb in csv format
+
+citysales.json - A copy of the city of buffalo's sale history (Records seem to have a cutoff period in early 90's)
+
+citysales.csv - A copy of citysales.json in csv format
+
+citysalesshort.csv - A copy of citysales.csv with fields for sbl,location,saletype,saledate,saleprice
+
+

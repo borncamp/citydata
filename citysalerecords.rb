@@ -80,15 +80,14 @@ def getSales(row)
   end
 end
      
-@readcoll.find.each do |row|
-  sales=[]
-  if @writecoll.find_one({:sbl=>row['sbl']})
-    puts 'skipping '+ row['propertylocation'].to_s
-    next
+@readcoll.find({},:timeout=>false) do |cursor|
+  cursor.each do |row|
+    sales=[]
+    if @writecoll.find_one({:sbl=>row['sbl']})
+      puts 'skipping '+ row['propertylocation'].to_s
+      next
+    end
+    puts row['propertylocation'].to_s
+    getSales(row)
   end
-  #be careful threading! city wbesite not that great at high load
-  #puts Thread.new{getSales(row)}
-  puts row['propertylocation'].to_s
-  getSales(row)
-#  puts 'new thread'+row['propertylocation'].to_s
 end
