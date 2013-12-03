@@ -39,6 +39,11 @@ citysalerecords.rb
     records on the city of buffalo's property information dataset.
     Ran on the realproperty.json dataset.
 
+flipper.rb
+   Goes through mongodb collection and searches for sbl's that were 
+   purchased as a tax sale and had another sale within 6 months of the
+   deed date for 120% or more of the original sale price.
+
 realproperty.json.zip - A zipped copy of the real property db scraped using allrealprop.rb in JSON format
 
 realproperty.csv - A copy of the real property db scraped using allrealprop.rb in csv format
