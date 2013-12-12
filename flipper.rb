@@ -21,7 +21,7 @@ readcoll.find('sales'=> {'$elemMatch'=>{'deedtype'=> "T- Tax Sale"}}).each do |r
     nextSalePrice=row['sales'][idx+1]['saleprice'][1..-1].to_f
     
 
-    if currentSalePrice*1.20<nextSalePrice and nextSaleDate-currentSaleDate<180 and sale['deedtype']=='T- Tax Sale'
+    if currentSalePrice*1.20<nextSalePrice and nextSaleDate-currentSaleDate<365 and sale['deedtype']=='T- Tax Sale'
       puts "eek Eeek Eeek!"+row['sbl']
     end
   end
