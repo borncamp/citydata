@@ -3,10 +3,7 @@ citydata
 
 buffalo city data
 
-My code looks like shit
-My code runs like shit
-Have a problem?
-Make a commit
+Mostly defunct. No guarantees
 
 realpropsearch.rb
 
