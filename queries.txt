@@ -1,0 +1,17 @@
+db.sales.findOne({"sales":{$elemMatch:{$elemMatch:{ "$in":["CITY OF BUFFALO REF"]}} } })
+
+db.sales.find({"sales":{$elemMatch:{$elemMatch:{ "$in":[/.*BUFFALO.*/]}} } })
+
+
+#city sales and property sold since date (by any party to any party)
+db.sales.find({
+	$and: [
+		{"sales":{$elemMatch:{$elemMatch:{ "$in":[/.*BUFFALO.*/i]}} }} ,
+		{"sales":{$elemMatch:{$elemMatch:{ "$in":[/.*201[789].*/i]}} }} 
+	]
+})
+
+
+db.sales.find({"sales":{$elemMatch:{$elemMatch:{ "$all":[/.*BUFFALO.*/i, /.*1993.*/]}} }})
+
+

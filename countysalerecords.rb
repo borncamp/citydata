@@ -19,9 +19,14 @@ dbwrite=MongoClient.new('localhost').db('citydata')
   sbl[1]=format("%.5f", sbl[1].to_f/100000)[2..-1]
   sbl[2]=(format("%.6f",sbl[2].to_f/1000))[2..-1]
   sblkey='140200'+sbl.join
-  page=@agent.get "http://paytax.erie.gov/webprop/property_info_history.asp?sblkey="+sblkey
-  puts sblkey
-  html=page.content
+  begin
+    page=@agent.get "http://paytax.erie.gov/webprop/property_info_history.asp?sblkey="+sblkey
+    puts sblkey
+    html=page.content
+  rescue
+    puts "had an error getting data from county" +sblkey
+    next
+  end
   #sometimes the sales don't have a valid table because the onwer is missing on a record
   #this leads to a missing <tr> tag for that row
   html.gsub! '</tr><th>Book', '</tr><tr><th>Book'
@@ -42,7 +47,12 @@ dbwrite=MongoClient.new('localhost').db('citydata')
      
     sales.push([name,bookdate])
   end
-  sbl=row['sbl']
-  data=[:sbl=> sbl, :sblkey=>sblkey, :sales=> sales]
-  @writecoll.insert data
+  begin
+    sbl=row['sbl']
+    data=[:sbl=> sbl, :sblkey=>sblkey, :sales=> sales]
+    @writecoll.insert data
+  rescue
+    puts "error inerting into mongo"
+    continue
+  end
 end
